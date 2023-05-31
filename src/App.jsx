@@ -10,7 +10,7 @@ export default class App extends Component {
       <div>
         <Header />
         <Main />
-        <Analytics mode={'production'} />;
+        <Analytics mode={'production'} />
       </div>
 
 

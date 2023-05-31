@@ -1,5 +1,4 @@
-import React, { Component, useState, useEffect } from 'react'
-// import { FaPlus } from 'react-icons/fa';
+import React, { Component } from 'react'
 import './Header.scss'
 
 export default class Header extends Component {
