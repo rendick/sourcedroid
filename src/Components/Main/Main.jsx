@@ -99,14 +99,14 @@ export default class Main extends Component {
 // Данные для карточек
 const data = [
     {
-        title: 'Card title',
+        title: 'isowrt',
         description: 'isowrt - easy way to burn a bootable flash drive with ISO',
         tags: ['it'],
         image: isowrt,
         alt: 'wave',
     },
     {
-        title: 'Card title',
+        title: 'twc',
         description: 'Image from unsplash.com',
         tags: ['it'],
         image: 'https://source.unsplash.com/300x225/?mountain',
