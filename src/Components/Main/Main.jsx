@@ -6,20 +6,17 @@ export default class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedTags: [], // Список выбранных хештегов
+            selectedTags: [],
         };
     }
 
-    // Обработчик клика по хештегу
     handleTagClick = (tag) => {
         const { selectedTags } = this.state;
         if (selectedTags.includes(tag)) {
-            // Если хештег уже выбран, удаляем его из списка выбранных
             this.setState({
                 selectedTags: selectedTags.filter((selectedTag) => selectedTag !== tag),
             });
         } else {
-            // Если хештег не выбран, добавляем его в список выбранных
             this.setState({
                 selectedTags: [...selectedTags, tag],
             });
@@ -29,19 +26,15 @@ export default class Main extends Component {
     render() {
         const { selectedTags } = this.state;
 
-        // Фильтрация элементов .card на основе выбранных хештегов
         const filteredCards = data.filter((card) => {
-            // Если нет выбранных хештегов, отображаем все карточки
             if (selectedTags.length === 0) {
                 return true;
             }
-            // Если карточка имеет хотя бы один выбранный хештег, отображаем ее
             return selectedTags.some((tag) => card.tags.includes(tag));
         });
 
         return (
             <div className="cards">
-                {/* Вывод отфильтрованных карточек */}
                 {filteredCards.map((card, index) => (
                     <div className="card" data-tags={card.tags.join(' ')} key={index}>
                         <div className="card__image-holder">
@@ -75,7 +68,6 @@ export default class Main extends Component {
                     </div>
                 ))}
 
-                {/* Кнопки для выбора хештегов */}
                 <div className="tag-buttons">
                     <button
                         className={selectedTags.includes('it') ? 'active' : ''}
@@ -89,7 +81,6 @@ export default class Main extends Component {
                     >
                         #web
                     </button>
-                    {/* Добавьте другие кнопки хештегов здесь */}
                 </div>
             </div>
         );
@@ -119,5 +110,4 @@ const data = [
         image: 'https://source.unsplash.com/300x225/?field',
         alt: 'field',
     },
-    // Добавьте другие данные карточек здесь
 ];
