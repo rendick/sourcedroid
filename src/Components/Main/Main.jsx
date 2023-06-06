@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import isowrt from './Images/isowrt/isowrt.png';
+import twc from './Images/twc/twc.png'
 import "./Main.scss";
 
 export default class Main extends Component {
@@ -91,16 +92,16 @@ export default class Main extends Component {
 const data = [
     {
         title: 'isowrt',
-        description: 'isowrt - easy way to burn a bootable flash drive with ISO',
+        description: 'Tool to create bootable USB',
         tags: ['it'],
         image: isowrt,
         alt: 'wave',
     },
     {
         title: 'twc',
-        description: 'Image from unsplash.com',
+        description: 'CLI Tron Wallet',
         tags: ['it'],
-        image: 'https://source.unsplash.com/300x225/?mountain',
+        image: twc,
         alt: 'mountain',
     },
     {
