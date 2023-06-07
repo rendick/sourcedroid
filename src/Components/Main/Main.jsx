@@ -36,6 +36,26 @@ export default class Main extends Component {
 
         return (
             <div className="cards">
+                <div className="tag-buttons">
+                    <button
+                        className={selectedTags.includes('it') ? 'active' : ''}
+                        onClick={() => this.handleTagClick('it')}
+                    >
+                        #it
+                    </button>
+                    <button
+                        className={selectedTags.includes('web') ? 'active' : ''}
+                        onClick={() => this.handleTagClick('web')}
+                    >
+                        #web
+                    </button>
+                    <button
+                        className={selectedTags.includes('mobile') ? 'active' : ''}
+                        onClick={() => this.handleTagClick('mobile')}
+                    >
+                        #mobile
+                    </button>
+                </div>
                 {filteredCards.map((card, index) => (
                     <div className="card" data-tags={card.tags.join(' ')} key={index}>
                         <div className="card__image-holder">
@@ -68,27 +88,11 @@ export default class Main extends Component {
                         </div>
                     </div>
                 ))}
-
-                <div className="tag-buttons">
-                    <button
-                        className={selectedTags.includes('it') ? 'active' : ''}
-                        onClick={() => this.handleTagClick('it')}
-                    >
-                        #it
-                    </button>
-                    <button
-                        className={selectedTags.includes('web') ? 'active' : ''}
-                        onClick={() => this.handleTagClick('web')}
-                    >
-                        #web
-                    </button>
-                </div>
             </div>
         );
     }
 }
 
-// Данные для карточек
 const data = [
     {
         title: 'isowrt',
