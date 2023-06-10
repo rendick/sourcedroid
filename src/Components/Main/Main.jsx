@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import isowrt from './Images/isowrt/isowrt.png';
-import twc from './Images/twc/twc.png'
+import twc from './Images/twc/twc.png';
 import "./Main.scss";
 
 export default class Main extends Component {
@@ -38,12 +38,6 @@ export default class Main extends Component {
             <div className="cards">
                 <div className="tag-buttons">
                     <button
-                        className={selectedTags.includes('it') ? 'active' : ''}
-                        onClick={() => this.handleTagClick('it')}
-                    >
-                        #it
-                    </button>
-                    <button
                         className={selectedTags.includes('web') ? 'active' : ''}
                         onClick={() => this.handleTagClick('web')}
                     >
@@ -54,6 +48,12 @@ export default class Main extends Component {
                         onClick={() => this.handleTagClick('mobile')}
                     >
                         #mobile
+                    </button>
+                    <button
+                        className={selectedTags.includes('linux') ? 'active' : ''}
+                        onClick={() => this.handleTagClick('linux')}
+                    >
+                        #linux
                     </button>
                 </div>
                 {filteredCards.map((card, index) => (
@@ -97,14 +97,14 @@ const data = [
     {
         title: 'isowrt',
         description: 'Tool to create bootable USB',
-        tags: ['it'],
+        tags: ['linux'],
         image: isowrt,
         alt: 'wave',
     },
     {
         title: 'twc',
         description: 'CLI Tron Wallet',
-        tags: ['it'],
+        tags: ['linux'],
         image: twc,
         alt: 'mountain',
     },
